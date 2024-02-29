@@ -1,6 +1,9 @@
 class Solution(object):
     def contains_duplicate(self, nums):
         
-        for num in nums:
-            if nums.count(num) > 1:
-                return True
+        my_set = set(nums)
+        my_list = list(my_set)
+        my_list.sort()
+        nums.sort()
+        is_different = my_list != nums
+        return is_different
